@@ -82,14 +82,8 @@ update_src() {
 #rm $TMPFILE
 
 # Check for required packages for compiling
-if [[ -z "$(which whiptail)" ]]; then
-	sudo apt-get update
-	sudo apt-get install -y whiptail
-fi
-if [[ -z "$(which getfacl)" ]]; then
-	sudo apt-get update
-	sudo apt-get install -y acl
-fi
+sudo apt-get update
+sudo apt-get install -y whiptail acl psmisc less vim 
 
 # Check for Vagrant
 if [[ "$1" == vagrant && -z "$(which vagrant)" ]]; then

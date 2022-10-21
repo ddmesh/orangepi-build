@@ -14,3 +14,12 @@ Soc | Boards |
 
 - 中文链接：     http://www.orangepi.cn
 - English link：http://www.orangepi.org
+
+## Build
+
+build reqires "root" which is dangerous!!!!! using 'build.sh docker' does not work.
+
+Use docker ubuntu and use container root user. current directory is mounted in.
+~~~sh
+docker run -it --rm --name orange -v $PWD:/build ubuntu:22.04 bash
+~~~
