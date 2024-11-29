@@ -661,6 +661,7 @@ prepare_host()
 	wait_for_package_manager
 
 	# temporally fix for Locales settings
+	apt install  -y locales-all
 	export LC_ALL="en_US.UTF-8"
 
 	# packages list for host

@@ -82,14 +82,14 @@ update_src() {
 #rm $TMPFILE
 
 # Check for required packages for compiling
-sudo apt-get update
-sudo apt-get install -y whiptail acl psmisc less vim 
+apt-get update
+apt-get install -y whiptail acl psmisc less vim 
 
 # Check for Vagrant
 if [[ "$1" == vagrant && -z "$(which vagrant)" ]]; then
 	display_alert "Vagrant not installed." "Installing"
-	sudo apt-get update
-	sudo apt-get install -y vagrant virtualbox
+	apt-get update
+	apt-get install -y vagrant virtualbox
 fi
 
 if [[ "$1" == dockerpurge && -f /etc/debian_version ]]; then
