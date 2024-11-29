@@ -17,9 +17,14 @@ Soc | Boards |
 
 ## Build
 
-build reqires "root" which is dangerous!!!!! using 'build.sh docker' does not work.
 
-Use docker ubuntu and use container root user. current directory is mounted in.
+**build.sh reqires "root" which is dangerous!!!!! LOCAL System WILL be MODIFIED** using 'build.sh docker' does not work.
+
+Instead: Use docker with **debian:10** and use container root user. Current directory is mounted into the container at **/build**.
+
 ~~~sh
-docker run -it --rm --name orange -v $PWD:/build ubuntu:22.04 bash
+docker run -it --rm --name orange -v $PWD:/build debian:10 bash
+# then within container:
+#  > cd /build
+#  > ./build.sh
 ~~~
